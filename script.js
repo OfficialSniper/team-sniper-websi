@@ -1,16 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() { console.log("Website Loaded Successfully!");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Website Loaded Successfully!");
 
-const navLinks = document.querySelectorAll("nav ul li a");
-navLinks.forEach(link => {
-    link.addEventListener("mouseover", () => {
-        link.style.color = "#ffcc00";
-    });
-    link.addEventListener("mouseout", () => {
-        link.style.color = "#58a6ff";
+    let navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            let sectionId = this.getAttribute("href").substring(1);
+            let section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
     });
 });
-
-alert("Welcome to Team Sniper's Website!");
-
-});
-
