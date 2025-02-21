@@ -2,61 +2,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Sniper - Social Media Ban/Unban Assistance</title>
+    <title>Team Sniper - Tech Themed</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Team Sniper</h1>
-        <p>Social Media Ban/Unban Assistance</p>
-    </header><section class="hero">
-    <h2>Uɴᴅᴇʀ Cʏʙᴇʀ Sᴇᴄᴜʀɪᴛʏ🔌 ~ Helping Influencers, YouTubers & Social Experts</h2>
-</section>
-
-<section class="services">
-    <h2>Our Services</h2>
-    <p>Assistance for Facebook, Instagram, WhatsApp & YouTube.</p>
+        <h1>Welcome to Team Sniper</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header><section id="home" class="hero">
+    <h2>We help influencers recover their accounts</h2>
+    <p>Get your Facebook, Instagram, WhatsApp, or YouTube unbanned quickly.</p>
     <a href="#payment" class="btn">Get Help Now</a>
 </section>
 
-<section id="payment">
+<section id="services">
+    <h2>Our Services</h2>
+    <ul>
+        <li>Facebook Ban/Unban</li>
+        <li>Instagram Account Recovery</li>
+        <li>WhatsApp Account Assistance</li>
+        <li>YouTube Channel Recovery</li>
+    </ul>
+</section>
+
+<section id="payment" class="payment">
     <h2>Make a Payment</h2>
     <p>Enter the amount you want to pay (in INR):</p>
     <input type="number" id="amount" placeholder="Enter amount">
-    <br>
     <button class="btn" onclick="generateQRCode()">Generate QR Code</button>
     <div id="qrcode"></div>
 </section>
 
-<section class="contact">
+<section id="contact">
     <h2>Contact Us</h2>
     <p>Telegram: @DSG_SNIPER</p>
     <p>Email: sniperportal89@gmail.com</p>
-    <p><a href="https://www.youtube.com/@SniperPortal" target="_blank">YouTube Channel</a></p>
 </section>
 
 <footer>
-    <p>&copy; 2025 Team Sniper. All Rights Reserved.</p>
+    <p>&copy; 2025 Team Sniper. All rights reserved.</p>
 </footer>
 
-<!-- Include QRCode.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-    function generateQRCode() {
-        var amount = document.getElementById("amount").value;
-        if (amount === "" || amount <= 0) {
-            alert("Please enter a valid amount.");
-            return;
-        }
-        var upiLink = "upi://pay?pa=anmol888@fam&pn=TeamSniper&am=" + amount + "&cu=INR&tn=Payment";
-        document.getElementById("qrcode").innerHTML = "";
-        new QRCode(document.getElementById("qrcode"), {
-            text: upiLink,
-            width: 200,
-            height: 200
-        });
-    }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
